@@ -36,7 +36,7 @@ app.get("/api/:timestamp", function (req, res) {
 
   if (!isNaN(Number(timestamp)) && timestamp.length === 13) {
     return res.json({
-      unix: timestamp,
+      unix: parselnt(timestamp),
       utc: new Date(Number(timestamp)).toUTCString(),
     });
   }
